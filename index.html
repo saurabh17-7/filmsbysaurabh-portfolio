@@ -294,7 +294,7 @@ footer a:hover{color:var(--bone)}
       : `<a class="frame" href="${esc(link)}" target="_blank" rel="noreferrer" aria-label="View ${esc(p.title)}"><img src="${esc(p.image)}" alt="${esc(p.alt || p.title)}" loading="lazy" onerror="this.style.opacity=0"></a>`;
     return `<article class="project ${esc(p.size)}" data-category="${esc(p.category)}">${media}
       <div class="meta"><div><h3>${esc(p.title)}</h3><span>${esc(p.type)}</span></div>
-      <a href="${esc(link)}" target="_blank" rel="noreferrer">Watch</a></div></article>`;
+      <a href="${esc(link)}" target="_blank" rel="noreferrer">${p.category === "photo" ? "View photos" : "Watch"}</a></div></article>`;
   }).join("");
   document.getElementById("year").textContent = new Date().getFullYear();
 

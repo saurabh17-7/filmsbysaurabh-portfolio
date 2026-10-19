@@ -52,7 +52,8 @@ const PROJECTS = [
     category: "photo",
     size: "",
     image: "images/landscape.jpg",
-    alt: "A calm lake and forest"
+    alt: "A calm lake and forest",
+    link: "https://www.instagram.com/fotozzz__?dlrf=MWt1czhhdTlqaGMzaQ%3D%3D&utm_source=qr"
   }
   /* To add more, copy a block above, add a comma after the previous one, and edit it. */
 ];
