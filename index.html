@@ -144,6 +144,11 @@ footer a:hover{color:var(--bone)}
   .about-grid,.svc{grid-template-columns:1fr}
   .slate .wrap span:last-child{display:none}
 }
+@media (max-width:600px){
+  .project .photo-frame{aspect-ratio:auto}
+  .project .photo-frame img{position:static;width:100%;height:auto;object-fit:contain}
+  .project .photo-frame:hover img{transform:none}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
@@ -289,7 +294,7 @@ footer a:hover{color:var(--bone)}
     const link = p.link || SITE.instagram;
     const media = p.embed
       ? `<a class="frame reel-preview" href="${esc(link)}" target="_blank" rel="noreferrer" aria-label="Watch ${esc(p.title)} on Instagram"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5"/><path d="m27 21 17 11-17 11V21Z" fill="currentColor"/></svg><span>Watch reel on Instagram</span></a>`
-      : `<a class="frame" href="${esc(link)}" target="_blank" rel="noreferrer" aria-label="View ${esc(p.title)}"><img src="${esc(p.image)}" alt="${esc(p.alt || p.title)}" loading="lazy" onerror="this.style.opacity=0"></a>`;
+      : `<a class="frame photo-frame" href="${esc(link)}" target="_blank" rel="noreferrer" aria-label="View ${esc(p.title)}"><img src="${esc(p.image)}" alt="${esc(p.alt || p.title)}" loading="lazy" onerror="this.style.opacity=0"></a>`;
     return `<article class="project ${esc(p.size)}" data-category="${esc(p.category)}">${media}
       <div class="meta"><div><h3>${esc(p.title)}</h3><span>${esc(p.type)}</span></div>
       <a href="${esc(link)}" target="_blank" rel="noreferrer">Watch</a></div></article>`;
